@@ -17,6 +17,7 @@ Each numbered sub-directory (`01, 02, 03...`) represent a different example usag
 Make sure you have Node.js installed (V4.2+ recommended).  Some examples may have specific requirements (e.g. 05 - Pages loaded from MongoDB).
 
 ```
+npm install
 node run 01
 ```
 
@@ -27,6 +28,28 @@ Replace the `01` with the directory name of the example you wish to execute.  Th
 ### 01
 
 As simple as Metalsmith can get.  Will basically move files from the `src` directory to the `build` directory and remove any 'front-matter' that they may contain.
+
+### 02
+
+* Introduces: metalsmith-markdown
+
+This is the first usage of a Metalsmith plugin.  In this case, it's `metalsmith-markdown` to render any markdown based files that are now contained with the `src` directory.
+
+### 03
+
+* Introduces: metalsmith-layouts, jade
+
+Now we have markdown pages being rendered to the build directory, it'd be a lot more useful if these have a site layout wrapped around them and more access to the metadata (`front-matter`).  The metalsmith-layouts plugin will use a variety of view template engines, in this case Jade, and process them all for you.  It's useful to have this happen after the markdown has been rendered.
+
+### 04
+
+* Introduces: metalsmith-collections metalsmith-permalinks moment
+
+Collections are introduced at this stage.  This allows building up of an array that will contain all files in a directory (or sub directories) according to a glob style search pattern.  These arrays can also be sorted by metadata that are set on the files matches and also reversed if required (e.g. sort of date, newest first).  This can then be taken advantage of within the layouts from the `03` example, providing a blog index page which can list all the blog posts and provide navigation links.
+
+Permalinks are used to create nicer URL's in the final build.  It supports flexible patterns that can use metadata to construct the URL for each file.  It also ensures that directories are created for each file, containing an `index.html` file.  This allows you to host your static site and navigate around it wihtout having to have lots of `.html` based URLs.
+
+Moment is a simple example of how the `metalsmith.metadata({})` method can be used to set global data for all view templates to take advantage of.  In this usage, it's to format the date associated with each blog post file.
 
 ### 05
 
