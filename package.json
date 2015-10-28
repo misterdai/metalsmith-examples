@@ -9,6 +9,7 @@
   "author": "David Boyer <dave.npm@yougeezer.co.uk> (http://misterdai.yougeezer.co.uk)",
   "license": "ISC",
   "dependencies": {
+    "babel": "^5.8.29",
     "jade": "^1.11.0",
     "metalsmith": "^2.1.0",
     "metalsmith-collections": "^0.7.0",
@@ -27,6 +28,7 @@
     "mongodb": "^2.0.46",
     "ncp": "^2.0.0",
     "node-static": "^0.7.7",
-    "prompt": "^0.2.14"
+    "prompt": "^0.2.14",
+    "request-promise": "^1.0.2"
   }
 }
