@@ -1,0 +1,9 @@
+extends /main/default
+
+block content
+  | Blog index
+  each post in collections.blog
+    h3= post.title
+      small= ' ' + moment(post.date).format('YYYY-MM-DD')
+    a(href='/#{post.path}') Read more
+    hr

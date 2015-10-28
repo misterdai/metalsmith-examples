@@ -1,0 +1,8 @@
+extends /main/default
+
+block content
+  h2 Blog
+  h3= title
+  time= moment(date).format('YYYY-MM-DD')
+  hr
+  != contents

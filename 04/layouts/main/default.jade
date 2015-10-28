@@ -1,0 +1,41 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title Static site
+    link(href='/css/bootstrap.min.css', rel='stylesheet')
+    style.
+      body {padding-top:60px;}
+  body
+    nav.navbar.navbar-default.navbar-fixed-top
+      .container
+        .navbar-header
+          button.navbar-toggle.collapsed(
+              type='button'
+              data-toggle='collapse'
+              data-target='#navbar-collapse'
+            )
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand(href='/') FullStack 2015
+        #navbar-collapse.collapse.navbar-collapse
+          ul.nav.navbar-nav
+            li.dropdown
+              a.dropdown-toggle(href='#' data-toggle='dropdown')
+                | Blog #[span.caret]
+              ul.dropdown-menu
+                li: a(href='/blog') Blog index
+                li.divider
+                each post in collections.blog.slice(0, 5)
+                  li: a(href='/#{post.path}')= post.title
+    .container
+      .jumbotron
+        h1 Hello FullStack 2015
+
+      block content
+
+    script(src='/js/jquery.min.js')
+    script(src='/js/bootstrap.min.js')

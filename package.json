@@ -1,0 +1,32 @@
+{
+  "name": "present",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "David Boyer <dave.npm@yougeezer.co.uk> (http://misterdai.yougeezer.co.uk)",
+  "license": "ISC",
+  "dependencies": {
+    "jade": "^1.11.0",
+    "metalsmith": "^2.1.0",
+    "metalsmith-collections": "^0.7.0",
+    "metalsmith-feed": "^0.2.0",
+    "metalsmith-layouts": "^1.4.2",
+    "metalsmith-lunr": "^0.2.1",
+    "metalsmith-markdown": "^0.2.1",
+    "metalsmith-more": "^0.2.0",
+    "metalsmith-pagination": "^1.1.1",
+    "metalsmith-paths": "^2.1.1",
+    "metalsmith-permalinks": "^0.4.0",
+    "metalsmith-prism": "^2.1.0",
+    "metalsmith-redirect": "^1.1.0",
+    "metalsmith-word-count": "0.0.4",
+    "moment": "^2.10.6",
+    "mongodb": "^2.0.46",
+    "ncp": "^2.0.0",
+    "node-static": "^0.7.7",
+    "prompt": "^0.2.14"
+  }
+}
